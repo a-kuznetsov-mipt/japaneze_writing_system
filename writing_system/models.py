@@ -20,3 +20,13 @@ class HiraganaLetter(BaseModel):
     id: int
     hepburn_romanization = models.CharField('Запись в системе Хепбёрна', max_length=256)
     image = models.ImageField('Изображение буквы', upload_to='hiragana_letters')
+
+
+class KatakanaLetter(BaseModel):
+    class Meta:
+        verbose_name = 'Буква катаканы'
+        verbose_name_plural = 'Буквы катаканы'
+
+    id: int
+    hepburn_romanization = models.CharField('Запись в системе Хепбёрна', max_length=256)
+    image = models.ImageField('Изображение буквы', upload_to='katakana_letters')
