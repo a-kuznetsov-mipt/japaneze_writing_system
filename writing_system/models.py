@@ -30,3 +30,15 @@ class KatakanaLetter(BaseModel):
     id: int
     hepburn_romanization = models.CharField('Запись в системе Хепбёрна', max_length=256)
     image = models.ImageField('Изображение буквы', upload_to='katakana_letters')
+
+
+class KanjiLetter(BaseModel):
+    class Meta:
+        verbose_name = 'Буква кандзи'
+        verbose_name_plural = 'Буквы кандзи'
+
+    id: int
+    meaning = models.CharField('Значение', max_length=256)
+    kunyomi_reading = models.CharField('Кунное чтение', max_length=256, blank=True)
+    onyomi_reading = models.CharField('Онное чтение', max_length=256, blank=True)
+    image = models.ImageField('Изображение буквы', upload_to='kanji_letters')
