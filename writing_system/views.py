@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 
 class HomeView(TemplateView):
     """Класс представления начальной страницы сайта."""
-    template_name = 'writing_system/base.html'
+    template_name = 'writing_system/home.html'
 
 
 class HiraganaListView(TemplateView):
