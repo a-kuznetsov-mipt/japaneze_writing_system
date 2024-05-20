@@ -7,7 +7,7 @@ urlpatterns = [
     path('list_hiragana', views.HiraganaListView.as_view(), name='list-hiragana'),
     path('list_katakana', views.KatakanaListView.as_view(), name='list-katakana'),
     path('list_kanji', views.KanjiListView.as_view(), name='list-kanji'),
-    path('from_hiragana', views.HiraganaListView.as_view(), name='form-hiragana'),
-    path('form_katakana', views.KatakanaListView.as_view(), name='form-katakana'),
-    path('form_kanji', views.KanjiListView.as_view(), name='form-kanji'),
+    path('create_hiragana', views.HiraganaListView.as_view(), name='form-hiragana'),
+    path('create_katakana', views.KatakanaListView.as_view(), name='form-katakana'),
+    path('create_kanji', views.KanjiListView.as_view(), name='form-kanji'),
 ]
