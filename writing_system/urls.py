@@ -10,4 +10,5 @@ urlpatterns = [
     path('create_hiragana', views.HiraganaFormView.as_view(), name='form-hiragana'),
     path('create_katakana', views.KatakanaFormView.as_view(), name='form-katakana'),
     path('create_kanji', views.KanjiFormView.as_view(), name='form-kanji'),
+    path('creation_froms_list', views.CreationFromsList.as_view(), name='creation-forms-list'),
 ]
