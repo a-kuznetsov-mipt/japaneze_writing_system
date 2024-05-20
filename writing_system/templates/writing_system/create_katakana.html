@@ -1,0 +1,10 @@
+{% extends 'writing_system/base.html' %}
+
+{% block title %}Элементы японской писменности - создание буквы катаканы{% endblock %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <h1 class="text-center">Форма создания буквы катаканы</h1>
+    {{ form.as_p }}
+    <input type="submit" value="Создать">
+</form>
+{% endblock %}
