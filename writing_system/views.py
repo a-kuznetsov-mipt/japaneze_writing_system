@@ -1,5 +1,6 @@
 from django.db.models import QuerySet
-from django.views.generic import TemplateView, ListView
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, ListView, CreateView
 
 from writing_system import models
 
@@ -39,19 +40,28 @@ class KanjiListView(ListView):
         return models.KanjiLetter.objects.all()
 
 
-class HiraganaFormView(TemplateView):
+class HiraganaFormView(CreateView):
     """Класс представления страницы создания буквы хираганы."""
-    template_name = 'writing_system/base.html'
+    template_name = 'writing_system/create_hiragana.html'
+    model = models.HiraganaLetter
+    fields = ['hepburn_romanization', 'image']
+    success_url = reverse_lazy('list-hiragana')
 
 
-class KatakanaFormView(TemplateView):
+class KatakanaFormView(CreateView):
     """Класс представления страницы создания буквы катаканы."""
-    template_name = 'writing_system/base.html'
+    template_name = 'writing_system/create_katakana.html'
+    model = models.KatakanaLetter
+    fields = ['hepburn_romanization', 'image']
+    success_url = reverse_lazy('list-katakana')
 
 
-class KanjiFormView(TemplateView):
+class KanjiFormView(CreateView):
     """Класс представления страницы создания буквы кандзи."""
-    template_name = 'writing_system/base.html'
+    template_name = 'writing_system/create_kanji.html'
+    model = models.KanjiLetter
+    fields = ['meaning', 'kunyomi_reading', 'onyomi_reading', 'image']
+    success_url = reverse_lazy('list-kanji')
 
 
 class CreationFromsList(TemplateView):
