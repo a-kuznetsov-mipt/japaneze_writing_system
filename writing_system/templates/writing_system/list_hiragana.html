@@ -1,0 +1,29 @@
+{% extends 'writing_system/base.html' %}
+
+{% block title %}Элементы японской писменности - хирагана{% endblock %}
+{% block content %}
+<div class="mb-2">
+    <div class="row gx-2 justify-content-center">
+        <h1 class="text-center">Буквы хираганы</h1>
+        {% for hiragana_letter in hiragana_letters %}
+        <div class="col-4 col-md-2">
+            <div class="card mb-2">
+                <div class="card-body position-relative text-center checkered p-1">
+                    <div>
+                        <img class="drop-shadow auto-size-square"
+                             src="{{ hiragana_letter.image.url }}"
+                             alt="{{ hiragana_letter.hepburn_romanization }}">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 text-muted mx-1 small-xs normal-sm">
+                        {{ hiragana_letter.hepburn_romanization }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <h1 class="text-center">
+            <a href="{% url 'create-hiragana' %}">Создать</a>
+        </h1>
+    </div>
+</div>
+{% endblock %}

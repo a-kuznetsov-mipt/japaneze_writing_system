@@ -1,0 +1,29 @@
+{% extends 'writing_system/base.html' %}
+
+{% block title %}Элементы японской писменности - катакана{% endblock %}
+{% block content %}
+<div class="mb-2">
+    <div class="row gx-2 justify-content-center">
+    <h1 class="text-center">Буквы катаканы</h1>
+        {% for katakana_letter in katakana_letters %}
+        <div class="col-4 col-md-2">
+            <div class="card mb-2">
+                <div class="card-body position-relative text-center checkered p-1">
+                    <div>
+                        <img class="drop-shadow auto-size-square"
+                             src="{{ katakana_letter.image.url }}"
+                             alt="{{ katakana_letter.hepburn_romanization }}">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 text-muted mx-1 small-xs normal-sm">
+                        {{ katakana_letter.hepburn_romanization }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <h1 class="text-center">
+            <a href="{% url 'create-katakana' %}">Создать</a>
+        </h1>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'writing_system/base.html' %}
+
+{% block title %}Элементы японской писменности - кандзи{% endblock %}
+{% block content %}
+<div class="mb-2">
+    <div class="row gx-2 justify-content-center">
+        <h1 class="text-center">Буквы кандзи</h1>
+        {% for kanji_letter in kanji_letters %}
+        <div class="col-4 col-md-2">
+            <div class="card mb-2">
+                <div class="card-body position-relative text-center checkered p-1">
+                    <div>
+                        <img class="drop-shadow auto-size-square"
+                             src="{{ kanji_letter.image.url }}"
+                             alt="{{ kanji_letter.meaning }}">
+                    </div>
+                </div>
+                <div class="card-header  text-nowrap text-ellipsis small-xs normal-sm p-1">
+                    <div class="text-center">
+                        <span class="">{{ kanji_letter.meaning }}</span>
+                    </div>
+                    <div class="text-left">
+                        <span class="">Кунное чтение: {{ kanji_letter.kunyomi_reading }}</span>
+                        <br>
+                        <span class="">Онное чтение: {{ kanji_letter.onyomi_reading }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <h1 class="text-center">
+            <a href="{% url 'create-kanji' %}">Создать</a>
+        </h1>
+    </div>
+</div>
+{% endblock %}
