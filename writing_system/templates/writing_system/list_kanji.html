@@ -28,9 +28,29 @@
             </div>
         </div>
         {% endfor %}
-        <h1 class="text-center">
-            <a href="{% url 'create-kanji' %}">Создать</a>
-        </h1>
+    </div>
+    <div class="row gx-2 justify-content-center">
+        <div class="col-md-2">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="card text-center">
+                Предыдущая страница
+            </a>
+            {% endif %}
+        </div>
+        <div class="col-md-2">
+            <div class="text-center">
+                <a href="{% url 'create-kanji' %}" class="btn btn-primary">
+                    Создать
+                </a>
+            </div>
+        </div>
+        <div class="col-md-2">
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="card text-center">
+                Следующая страница
+            </a>
+            {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}
