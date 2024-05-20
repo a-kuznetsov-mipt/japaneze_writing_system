@@ -36,3 +36,8 @@ class KatakanaFormView(TemplateView):
 class KanjiFormView(TemplateView):
     """Класс представления страницы создания буквы кандзи."""
     template_name = 'writing_system/base.html'
+
+
+class CreationFromsList(TemplateView):
+    """Класс представления страницы списка форм создания букв."""
+    template_name = 'writing_system/creation_forms_list.html'
