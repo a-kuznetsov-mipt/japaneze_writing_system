@@ -29,10 +29,10 @@ class HiraganaFormView(TemplateView):
 
 
 class KatakanaFormView(TemplateView):
-    """Класс представления страницы создания буквы хираганы."""
+    """Класс представления страницы создания буквы катаканы."""
     template_name = 'writing_system/base.html'
 
 
 class KanjiFormView(TemplateView):
-    """Класс представления страницы создания буквы хираганы."""
+    """Класс представления страницы создания буквы кандзи."""
     template_name = 'writing_system/base.html'
