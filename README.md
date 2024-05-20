@@ -23,6 +23,7 @@
     ```commandline
     python manage.py runserver
     ```
+   Для корректной работы сайта в settings.py должно стоять DEBUG = True!
 
 ## О чём проект:
 
